@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+.sitemenu {
+	display:flex;  
+	
+   }
+
+   li {
+	   list-style: none;
+	   font-size: xx-large;
+	   
+   }
+
+   ul {
+	   display: flex;
+	   justify-content: space-evenly;
+	   align-items: center;
+	   width: 100%;
+	   font-family: 'Amatic SC', cursive;
+	   font-size: 70;
+	   
+
+   }
+
+  
+  a.one:link {color:black;}
+  a.one:visited {color:black;}
+  a.one:hover {color:lightsteelblue;}
+  
+  a.two:link {color:black;}
+  a.two:visited {color:black;}
+  a.two:hover {color:lightsteelblue;}
+  
+  a.three:link {color:black;}
+  a.three:visited {color:black;}
+  a.three:hover {color:lightsteelblue;}
+
+  #cat1 {
+	
+	margin: 40px auto 40px auto;
+	width: 80%;
+	padding: 3px;
+	font-family: 'Rock Salt', cursive;
+	object-position: center;
+	text-align: left;
+    font-size: 150%
+  }
+
+.gallery1 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+  figure { 
+    width: 300px; 
+    float: left; 
+    margin: 0 20px 50px 100px; 
+    background: white;
+    border: 10px solid white; 
+    -webkit-box-shadow: 0 3px 10px #ccc; 
+    -moz-box-shadow: 0 3px 10px #ccc;
+    -webkit-transform: rotate(5deg); 
+    -moz-transform: rotate(5deg);
+    -webkit-transition: all 0.7s ease; 
+    -moz-transition: all 1s ease;
+    position: relative;
+    
+  }
+  
+  figcaption { 
+    text-align: center; 
+    display: block; 
+    font-size: 24px; 
+    font-style: bold; 
+    font-family: 'Amatic SC', cursive;
+  }
+  
+  figure img { 
+    width: 100%; /* Scale down */
+  }
+
+  figure:hover {
+    -webkit-transform: rotate(-1deg); -moz-transform: rotate(1deg);
+    -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+  }
+  
+  figure:focus {
+    outline: none;
+    -webkit-transform: rotate(-3deg) scale(2.5); -moz-transform: rotate(-3deg) scale(2.5);
+     -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+    z-index: 9999;
+  }

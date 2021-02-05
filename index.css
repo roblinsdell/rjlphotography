@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+@keyframes tonext {
+	75% {
+	  left: 0;
+	}
+	95% {
+	  left: 100%;
+	}
+	98% {
+	  left: 100%;
+	}
+	99% {
+	  left: 0;
+	}
+  }
+  
+  @keyframes tostart {
+	75% {
+	  left: 0;
+	}
+	95% {
+	  left: -300%;
+	}
+	98% {
+	  left: -300%;
+	}
+	99% {
+	  left: 0;
+	}
+  }
+  
+  @keyframes snap {
+	96% {
+	  scroll-snap-align: center;
+	}
+	97% {
+	  scroll-snap-align: none;
+	}
+	99% {
+	  scroll-snap-align: none;
+	}
+	100% {
+	  scroll-snap-align: center;
+	}
+  }
+  
+  body {
+	
+  }
+  .sitemenu {
+	display:flex;  
+	
+   }
+
+   li {
+	   list-style: none;
+	   font-size: xx-large;
+	   
+   }
+
+   ul {
+	   display: flex;
+	   justify-content: space-evenly;
+	   align-items: center;
+	   width: 100%;
+	   font-family: 'Amatic SC', cursive;
+	   font-size: 70;
+	   
+
+   }
+
+  
+  a.one:link {color:black;}
+  a.one:visited {color:black;}
+  a.one:hover {color:lightsteelblue;}
+  
+  a.two:link {color:black;}
+  a.two:visited {color:black;}
+  a.two:hover {color:lightsteelblue;}
+  
+  a.three:link {color:black;}
+  a.three:visited {color:black;}
+  a.three:hover {color:lightsteelblue;}
+  
+  * {
+	outline: 0;
+  }
+
+  #welcome {
+	
+	margin: 50px auto 10px auto;
+	width: 80%;
+	padding: 3px;
+	font-family: 'Rock Salt', cursive;
+	object-position: center;
+	text-align: center;
+	font-size: 120%
+  }
+
+  	
+
+  .carooo {
+	max-width: 80%;
+	margin: 0 auto;
+	padding: 0 1.25rem;
+	font-family: 'Lato', sans-serif;
+	
+  }
+  
+  * {
+	scrollbar-color: transparent transparent; /* thumb and track color */
+	scrollbar-width: 0px;
+  }
+  
+  *::-webkit-scrollbar {
+	width: 0;
+  }
+  
+  *::-webkit-scrollbar-track {
+	background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+	background: transparent;
+	border: none;
+  }
+  
+  * {
+	-ms-overflow-style: none;
+  }
+  
+  ol, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .carousel {
+	position: relative;
+	padding-top: 75%;
+	filter: drop-shadow(0 0 10px rgb(88, 82, 82));
+	perspective: 100px;
+  }
+  
+  .carousel__viewport {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	overflow-x: scroll;
+	counter-reset: item;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+  }
+  
+  .carousel__slide {
+	position: relative;
+	flex: 0 0 100%;
+	width: 100%;
+	counter-increment: item;
+  }
+  
+  .carousel__slide:nth-child(1) {
+	background-image: url("carousel__slide1.jpg");
+	background-repeat:no-repeat;
+	background-size: 100%
+  }
+  .carousel__slide:nth-child(2) {
+	background-image: url("carousel__slide2.jpg");
+	background-repeat:no-repeat;
+	background-size: 100%
+  }
+  .carousel__slide:nth-child(3) {
+	background-image: url("carousel__slide3.jpg");
+	background-repeat:no-repeat;
+	background-size: 100% 
+  }
+  .carousel__slide:nth-child(4) {
+	background-image: url("carousel__slide4.jpg");
+	background-repeat:no-repeat;
+	background-size: 100%;
+	
+  }
+  
+  .carousel__snapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	scroll-snap-align: center;
+  }
+  
+  @media (hover: hover) {
+	.carousel__snapper {
+	  animation-name: tonext, snap;
+	  animation-timing-function: ease;
+	  animation-duration: 4s;
+	  animation-iteration-count: infinite;
+	}
+  
+	.carousel__slide:last-child .carousel__snapper {
+	  animation-name: tostart, snap;
+	}
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+	.carousel__snapper {
+	  animation-name: none;
+	}
+  }
+  
+  .carousel:hover .carousel__snapper,
+  .carousel:focus-within .carousel__snapper {
+	animation-name: none;
+  }
+  
+  .carousel__navigation {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+  }
+  
+  .carousel__navigation-list,
+  .carousel__navigation-item {
+	display: inline-block;
+  }
+  
+  .carousel__navigation-button {
+	display: inline-block;
+	width: .7rem;
+	height: .7rem;
+	background-color: rgba(56, 56, 58, 0.938);
+	background-clip: content-box;
+	border: 0.25rem solid transparent;
+	border-radius: 50%;
+	font-size: 0;
+	transition: transform 0.1s;
+  }
+  
+  .carousel::before,
+  .carousel::after,
+  .carousel__prev,
+  .carousel__next {
+	position: absolute;
+	top: 0;
+	margin-top: 37.5%;
+	width: 4rem;
+	height: 4rem;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	font-size: 0;
+	outline: 0;
+  }
+  
+  .carousel::before,
+  .carousel__prev {
+	left: -1rem;
+  }
+  
+  .carousel::after,
+  .carousel__next {
+	right: -1rem;
+  }
+  
+  
