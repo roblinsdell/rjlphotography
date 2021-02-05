@@ -35,6 +35,11 @@
   a.three:visited {color:black;}
   a.three:hover {color:lightsteelblue;}
   
+  textarea {
+     height: auto;
+     
+  }
+
   #thanks {
 	
 	margin: 100px auto 100px auto;
